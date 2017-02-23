@@ -15,7 +15,6 @@ describe "Items API" do
 
     items = JSON.parse(response.body)
     item = items.first
-    # binding.pry
 
     expect(response.status).to eq(200)
     expect(items.count).to eq(2)
@@ -27,7 +26,7 @@ describe "Items API" do
     expect(item).not_to have_key("updated_at")
   end
 
-  xit "can return one item by id" do
+  it "can return one item by id" do
     get "/api/v1/items/#{@item_1.id}"
 
     item = JSON.parse(response.body)
@@ -40,14 +39,14 @@ describe "Items API" do
     expect(item).not_to have_key("updated_at")
   end
 
-  xit "can delete one item by id" do
+  it "can delete one item by id" do
     delete "/api/v1/items/#{@item_1.id}"
 
     expect(response.status).to eq(204)
     expect(Item.count).to eq(1)
   end
 
-  xit "can create an item" do
+  it "can create an item" do
     item_attributes = { name: "Trinkit",
                         description: "very shiny",
                         image_url: "/"}
