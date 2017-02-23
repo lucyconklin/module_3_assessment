@@ -10,10 +10,12 @@ class Api::V1::ItemsController < ActionController::API
   def destroy
     item = Item.find(params[:id])
     item.destroy
+    render :nothing => true, :status => 204
   end
 
   def create
-    item = Item.new(item_params)
+    item = Item.create(item_params)
+    render json: item, :status => 201
   end
 
   private
