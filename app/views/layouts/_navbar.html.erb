@@ -19,6 +19,12 @@
       <li>
         <a href="/orders">Orders</a>
       </li>
+      <li>
+        <form>
+        <%= search_field_tag 'search', 'Enter your zipcode here' %>
+        <%= submit_tag search_path %>
+      </form>
+      </li>
     </ul>
   </div>
 </nav>
