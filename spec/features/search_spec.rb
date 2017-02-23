@@ -13,7 +13,7 @@ describe "Best Buy store search" do
   it "user can enter zipcode to see nearby stores" do
     visit "/"
 
-    fill_in('search', with: "80202")
+    fill_in(:q, with: "80202")
     click_on("search")
 
     expect(current_path).to eq(search_path)
