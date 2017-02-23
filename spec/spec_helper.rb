@@ -16,10 +16,9 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-require 'webmock/rspec'
+# require 'webmock/rspec'
 
 RSpec.configure do |config|
-  WebMock.disable_net_connect!(allow_localhost: true)
 
   config.expect_with :rspec do |expectations|
 
@@ -27,6 +26,7 @@ RSpec.configure do |config|
   end
 
   config.mock_with :rspec do |mocks|
+    # WebMock.disable_net_connect!(allow_localhost: true)
 
     mocks.verify_partial_doubles = true
   end
