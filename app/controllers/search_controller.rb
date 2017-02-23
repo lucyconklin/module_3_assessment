@@ -1,6 +1,7 @@
 class SearchController < ApplicationController
   def index
-    @stores = BestBuyStore.find_by_zipcode(params[:q])
-    # @total = BestBuyStore.total
+    all_stores = BestBuyStore.find_by_zipcode(params[:q])
+    @total = all_stores.count
+    @stores = all_stores[0..9]
   end
 end

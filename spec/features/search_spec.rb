@@ -21,7 +21,6 @@ describe "Best Buy store search" do
       expect(page).to have_content("16 Total Stores")
       expect(page).to have_selector(".store", count: 10)
       within first('.store') do
-        save_and_open_page
         expect(page).to have_content(@store.long_name)
         expect(page).to have_content(@store.city)
         expect(page).to have_content(@store.distance)
