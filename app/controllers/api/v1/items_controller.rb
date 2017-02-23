@@ -1,15 +1,16 @@
 class Api::V1::ItemsController < ActionController::API
+  before_action :set_item, only: [:destroy, :show]
+  
   def index
     render json: Item.all
   end
 
   def show
-    render json: Item.find(params[:id])
+    render json: @item
   end
 
   def destroy
-    item = Item.find(params[:id])
-    item.destroy
+    @item.destroy
     render :nothing => true, :status => 204
   end
 
@@ -19,6 +20,10 @@ class Api::V1::ItemsController < ActionController::API
   end
 
   private
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.require(:item).permit(:name, :description, :image_url)
