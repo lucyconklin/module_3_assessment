@@ -1,17 +1,17 @@
 class BestBuyStore
-  # attr_reader :long_name,
-  #             :city,
-  #             :distance,
-  #             :phone_number,
-  #             :type
+  attr_reader :long_name,
+              :city,
+              :distance,
+              :phone_number,
+              :type
 
-  # def initialize(attributes)
-  #   @long_name    = []
-  #   @city         = []
-  #   @distance     = []
-  #   @phone_number = []
-  #   @type         = []
-  # end
+  def initialize(attributes)
+    @long_name    = []
+    @city         = []
+    @distance     = []
+    @phone_number = []
+    @type         = []
+  end
 
   def self.find_by_zipcode(zipcode)
     stores = BestBuyService.find_by_zipcode(zipcode)
