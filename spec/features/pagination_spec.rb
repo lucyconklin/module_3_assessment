@@ -7,10 +7,9 @@ describe "Search page with paginate" do
     fill_in(:q, with: "80202")
     click_on("search")
 
-    click_on("page 2")
+    click_on("2")
 
     expect(page).to have_content("16 Total Stores")
-    expect(page).to have_content("Page 2")
     expect(page).to have_selector(".store", count: 6)
   end
 end
