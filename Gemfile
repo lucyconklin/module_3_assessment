@@ -16,6 +16,7 @@ gem "faraday"
 gem 'active_model_serializers'
 gem 'will_paginate'
 gem 'turbolinks'
+gem 'rails_12factor'
 
 group :development do
   gem "spring"
