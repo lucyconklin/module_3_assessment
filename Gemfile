@@ -22,6 +22,10 @@ group :development do
   gem "spring"
 end
 
+group :test do  
+  gem 'database_cleaner'
+end
+
 group :development, :test do
   gem "pry", :require => "pry"
   gem 'rspec-rails'

@@ -9,7 +9,7 @@ via `git` and pull in gem dependencies with `bundler`:
 
 ```sh
 $ git clone https://github.com/lucyconklin/module_3_assessment.git
-$ cd storedom
+$ cd module_3_assessment
 $ bundle
 ```
 

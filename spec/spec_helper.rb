@@ -20,14 +20,20 @@
 
 RSpec.configure do |config|
 
-  config.expect_with :rspec do |expectations|
+  config.before(:each) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
 
+end
+
+RSpec.configure do |config|
+
+  config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
   config.mock_with :rspec do |mocks|
-    # WebMock.disable_net_connect!(allow_localhost: true)
-
     mocks.verify_partial_doubles = true
   end
 
