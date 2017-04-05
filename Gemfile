@@ -15,6 +15,7 @@ gem "figaro"
 gem "faraday"
 gem 'active_model_serializers'
 gem 'will_paginate'
+gem 'turbolinks'
 
 group :development do
   gem "spring"
