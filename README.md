@@ -8,7 +8,7 @@ To get set up with the storedom application, clone it
 via `git` and pull in gem dependencies with `bundler`:
 
 ```sh
-$ git clone https://github.com/lucyconklin/module_3_assessment
+$ git clone https://github.com/lucyconklin/module_3_assessment.git
 $ cd storedom
 $ bundle
 ```
